@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="src/css/bootstrap.css">
+    <link rel="stylesheet" href="src/css/loaders.css">
+    <script src="src/css/tailwind.css"></script>
+    <script src="src/js/calendar.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <title>DIMT</title>
+    <style>
+        body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #93C5FD; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #60A5FA; }
+
+        /* Sidebar active indicator */
+        .sidebar-btn { position: relative; }
+        .sidebar-btn::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 6px; bottom: 6px;
+            width: 3px;
+            border-radius: 0 3px 3px 0;
+            background: #3B82F6;
+            transform: scaleY(0);
+            transition: transform 0.2s ease;
+        }
+        .sidebar-btn:hover::before,
+        .sidebar-btn.active::before { transform: scaleY(1); }
+
+        /* Card lift on hover */
+        .card-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .card-lift:hover { transform: translateY(-3px); box-shadow: 0 16px 40px -8px rgba(59,130,246,0.2); }
+
+        /* Program chip hover */
+        .program-chip { transition: all 0.2s ease; }
+        .program-chip:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px -2px rgba(59,130,246,0.25);
+        }
+
+        /* Image subtle overlay */
+        .img-overlay { position: relative; }
+        .img-overlay::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(59,130,246,0.1) 0%, transparent 50%);
+            border-radius: inherit;
+            pointer-events: none;
+        }
+
+        /* Header gradient line */
+        .header-line {
+            background: linear-gradient(90deg, #3B82F6, #6366F1, #8B5CF6, #3B82F6);
+            height: 2px;
+        }
+
+        /* Glow dot */
+        .glow-dot {
+            box-shadow: 0 0 8px rgba(59,130,246,0.6);
+        }
+
+        /* Certification card shine */
+        .cert-card { position: relative; overflow: hidden; }
+        .cert-card::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.5) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+        }
+        .cert-card:hover::before { opacity: 1; }
+
+        /* Subtle animated BG shimmer (CSS only) */
+        .bg-shimmer {
+            background: linear-gradient(135deg, #EFF6FF 0%, #E0E7FF 25%, #DBEAFE 50%, #E0E7FF 75%, #EFF6FF 100%);
+            background-size: 400% 400%;
+            animation: shimmer 15s ease infinite;
+        }
+        @keyframes shimmer {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        input,select,option{
+          text-transform: uppercase;
+        }
+
+        /* red border when empty/invalid */
+input:invalid,
+select:invalid {
+  border: 2px solid red;
+}
+
+/* green border when valid */
+input:valid,
+select:valid {
+  border: 2px solid green;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+.skeleton{
+    position: relative;
+    color: transparent;
+    user-select: none;
+    overflow: hidden;
+
+    background: #d1d5db;
+    border-radius: 8px;
+}
+
+/* Silver wiping effect */
+.skeleton::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -150%;
+
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,0.7),
+        transparent
+    );
+
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer{
+    100%{
+        left: 150%;
+    }
+}
+
+
+@keyframes blinkBorder {
+  0% { box-shadow: 0 0 0 0 #3b82f6; }
+  50% { box-shadow: 0 0 0 6px rgba(59,130,246,0.5); }
+  100% { box-shadow: 0 0 0 0 transparent; }
+}
+
+.blink {
+  animation: blinkBorder 0.5s ease-in-out 5;
+}
+
+
+
+
+
+.loader2 {
+  width: 50px;
+  aspect-ratio: 1;
+  display: grid;
+  border: 4px solid #0000;
+  border-radius: 50%;
+  border-color: #ccc #0000;
+  animation: l16 1s infinite linear;
+}
+.loader2::before,
+.loader2::after {    
+  content: "";
+  grid-area: 1/1;
+  margin: 2px;
+  border: inherit;
+  border-radius: 50%;
+}
+.loader2::before {
+  border-color: #3b82f6 #0000;
+  animation: inherit; 
+  animation-duration: .5s;
+  animation-direction: reverse;
+}
+.loader2::after {
+  margin: 8px;
+}
+@keyframes l16 { 
+  100%{transform: rotate(1turn)}
+}
+
+#land_card{
+    transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+    </style>
+</head>
+<body class="h-screen overflow-hidden flex flex-col bg-blue-50">
+<div id="holder" style="display:none;"></div>
+    <!-- headiing section-->
+    <header class="bg-blue-50/80 backdrop-blur-xl shrink-0 z-20">
+        <div class="flex items-center justify-between px-5 lg:px-8 py-3">
+            <!-- Logo & Name -->
+            <div class="flex items-center gap-3">
+                <div class="w-11 h-11 lg:w-14 lg:h-14 rounded-xl bg-white/70 shadow-sm flex items-center justify-center">
+                    <img src="src/img/dimt.png" class="w-9 h-9 lg:w-12 lg:h-12 object-contain"/>
+                </div>
+                <div>
+                    <h1 class="text-blue-900 font-extrabold text-xl lg:text-2xl tracking-tight leading-none">DIMT</h1>
+                    <p class="text-[9px] lg:text-[10px] text-blue-400 font-medium tracking-[0.15em] uppercase hidden sm:block">Domasi Institute of Management & Technology</p>
+                </div>
+            </div>
+
+            <!-- Nav Links -->
+            <div class="flex items-center gap-1.5 lg:gap-2" id='After_links' style="display:none;">
+                <button 
+    onclick="logout();" 
+    class="group flex items-center gap-2 bg-red-50 hover:bg-red-500 text-red-600 hover:text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-all duration-200 cursor-pointer shadow-sm hover:shadow-lg hover:shadow-red-500/25"
+>
+    <i class="bi bi-power text-base transition-transform duration-200 group-hover:rotate-90"></i>
+    <span>Logout</span>
+</button>
+            </div>
+            <div class="flex items-center gap-1.5 lg:gap-2" id='Before_links'>
+                <a class="text-sm font-medium text-blue-500 hover:text-blue-700 hover:bg-white/60 px-4 py-2 rounded-lg transition-all duration-200 cursor-pointer" onclick="window.location='admin/index.html'">
+                    Admin
+                </a>
+                <a class="text-sm font-medium text-blue-500 hover:text-blue-700 hover:bg-white/60 px-4 py-2 rounded-lg transition-all duration-200 cursor-pointer" onclick="nav('dashboard');">
+                    Home
+                </a>
+                <a class="text-sm font-medium text-blue-500 hover:text-blue-700 hover:bg-white/60 px-4 py-2 rounded-lg transition-all duration-200 cursor-pointer" onclick="nav('apply');">
+                    Apply
+                </a>
+                <a class="text-sm font-medium text-blue-500 hover:text-blue-700 hover:bg-white/60 px-4 py-2 rounded-lg transition-all duration-200 cursor-pointer" onclick="nav('login');">
+                    Login
+                </a>
+                <a class="text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 px-5 py-2.5 rounded-xl transition-all duration-200 cursor-pointer shadow-md shadow-blue-300/50" onclick="nav('register');">
+                    Signup
+                </a>
+            </div>
+        </div>
+        <div class="header-line"></div>
+    </header>
+
+    <!-- main layoyt-->
+    <main class="flex flex-1 overflow-hidden">
+
+        <!-- sidebar navigation -->
+        <aside class="hidden sm:hidden md:flex md:w-52 lg:w-60 bg-white/50 backdrop-blur-xl border-r border-blue-100/60 flex-col shrink-0 animate-[fadeIn_0.8s_ease-in-out]" style="display:none;" id='sideNAV'>
+            <div class="px-5 pt-6 pb-4">
+                <p class="text-[10px] font-bold text-blue-300 tracking-[0.2em] uppercase">Menu</p>
+            </div>
+            <nav class="flex flex-col gap-0.5 px-2">
+                <button class="sidebar-btn active flex items-center gap-3 px-4 py-3 text-sm font-semibold text-blue-700 bg-blue-100/60 rounded-r-lg" onclick="allow();">
+                    <i class="bi bi-grid-fill text-base"></i>
+                    <span>Dashboard</span>
+                </button>
+                <button class="sidebar-btn flex items-center gap-3 px-4 py-3 text-sm font-medium text-blue-400 hover:text-blue-600 hover:bg-blue-100/40 rounded-r-lg transition-all duration-200" onclick="nav('library');">
+                    <i class="bi bi-book text-base"></i>
+                    <span>Library</span>
+                </button>
+                <button class="sidebar-btn flex items-center gap-3 px-4 py-3 text-sm font-medium text-blue-400 hover:text-blue-600 hover:bg-blue-100/40 rounded-r-lg transition-all duration-200" onclick="nav('anncmts');">
+                    <i class="bi bi-megaphone text-base"></i>
+                    <span>Announcements</span>
+                </button>
+                <button class="sidebar-btn flex items-center gap-3 px-4 py-3 text-sm font-medium text-blue-400 hover:text-blue-600 hover:bg-blue-100/40 rounded-r-lg transition-all duration-200" onclick="nav('exams');">
+                    <i class="bi bi-file-earmark-text text-base"></i>
+                    <span>Exams</span>
+                </button>
+                <button class="sidebar-btn flex items-center gap-3 px-4 py-3 text-sm font-medium text-blue-400 hover:text-blue-600 hover:bg-blue-100/40 rounded-r-lg transition-all duration-200" onclick="nav('profile')">
+                    <i class="bi bi-person-circle text-base"></i>
+                    <span>Profile</span>
+                </button>
+            </nav>
+
+
+        </aside>
+
+        <!-- content area-->
+        <section id='view' class="flex-1 min-w-0 overflow-y-auto bg-shimmer p-4 lg:p-6 space-y-5">
+
+            
+
+        </section>
+       
+    </main>
+
+    <!-- footer -->
+<footer class="border-t border-slate-200/60 bg-white/70 backdrop-blur-xl">
+
+    <!-- Desktop Footer -->
+    <div class="hidden md:flex items-center justify-between px-8 py-4 text-xs text-slate-500">
+
+        <!-- Left: Phone -->
+        <div class="flex items-center gap-4">
+            <span class="flex items-center gap-2 hover:text-slate-700 transition">
+                <i class="bi bi-telephone text-blue-500"></i>
+                0993 266 810
+            </span>
+
+            <span class="text-slate-300">|</span>
+
+            <span class="flex items-center gap-2 hover:text-slate-700 transition">
+                <i class="bi bi-telephone text-blue-500"></i>
+                0888 287 816
+            </span>
+        </div>
+
+        <!-- Center: Location + Copyright -->
+        <div class="flex items-center gap-3 text-slate-400">
+            <span class="flex items-center gap-1">
+                <i class="bi bi-geo-alt text-red-400"></i>
+                Zomba, Malawi
+            </span>
+
+            <span class="w-1 h-1 rounded-full bg-slate-300"></span>
+
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+
+            <span>
+                © 2026 <span class="font-semibold text-slate-600">DIMT</span>
+                All rights reserved
+            </span>
+        </div>
+
+        <!-- Right: Email -->
+        <div class="flex items-center gap-2 hover:text-slate-700 transition">
+            <i class="bi bi-envelope text-blue-500"></i>
+            dimtacademics@gmail.com
+        </div>
+
+    </div>
+
+    <!-- Mobile Bottom Nav -->
+    <nav id="mobile_menu"></nav>
+
+</footer>
+
+
+<script src='src/js/supabase.js' defer></script>
+
+<script src='src/js/cards/home_card.js' defer></script>
+<script src='src/js/cards/dashboard_card.js' defer></script>
+<script src='src/js/cards/signup_card.js' defer></script>
+<script src='src/js/cards/signin_card.js' defer></script>
+<script src='src/js/cards/apply_card.js' defer></script>
+<script src='src/js/cards/library_card.js' defer></script>
+<script src='src/js/cards/announcement_card.js' defer></script>
+<script src='src/js/cards/profile_card.js' defer></script>
+<script src='src/js/cards/mobile_card.js' defer></script>
+
+
+
+<script>
+
+//used to switch images how to add effect e.g zooming effect
+function lex() {
+    const img = document.getElementById("land_card");
+
+    setInterval(() => {
+        img.style.opacity = "0";
+
+        setTimeout(() => {
+            const which = Math.floor(Math.random() * 5) + 1;
+            img.src = `src/img/gala${which}.jpg`;
+
+            img.onload = () => {
+                img.style.opacity = "1";
+            };
+        }, 800);
+    }, 30000);
+}
+  
+
+function nav(opt){
+
+  const view = document.getElementById("view");
+
+  // show loading first
+  view.innerHTML = `
+    <div class='grid place-items-center' style=" width:100%; height:100%;">
+        <div class='loader2 h-[100px] w-[100px]'></div>
+    </div>
+  `;
+
+  // delay content rendering slightly
+  setTimeout(() => {
+
+    if(opt == "library"){
+      view.innerHTML = library;
+      loadBooks();
+
+    }else if(opt == "anncmts"){
+      view.innerHTML = anncmt ;
+      loadNotification(0);
+
+    }else if(opt == "exams"){
+      EXAM_REG();
+
+    }else if(opt == "profile"){
+      view.innerHTML = profile;
+      show_pic();
+
+    }else if(opt == "login"){
+      view.innerHTML = login;
+
+    }else if(opt == "register"){
+      view.innerHTML = signup;
+
+    }else if(opt == "apply"){
+      APPLY_REG();
+
+    }else if(opt == "student_access"){
+      view.innerHTML = access;
+      show_pic();
+      loadNotification(1);
+
+    }else{
+      view.innerHTML = dashboard;
+      lex();
+    }
+
+  }, 500); // loader shows for 0.5 seconds
+
+}
+
+  function logout(){
+    sessionStorage.removeItem('session_token'); 
+      document.getElementById('sideNAV').style.display = 'none';
+      document.getElementById('bottomNAV').style.display = 'none';
+      document.getElementById('Before_links').style.display = '';
+      document.getElementById('After_links').style.display = 'none';
+    allow();
+  }
+
+function view_results() {
+
+    document.querySelectorAll('.wrapper').forEach(el => {
+        el.style.display = 'none';
+        const tag = document.getElementById('results_section');
+            tag.scrollIntoView({ behavior: 'smooth' });
+            tag.classList.remove('blink');
+            void tag.offsetWidth; // restart animation
+            tag.classList.add('blink');
+    setTimeout(()=>{
+        document.querySelectorAll('.wrapper').forEach(el => {
+        el.style.display = 'grid';
+    });
+    },60000);
+    });
+}
+</script>
+</body>
+</html>
