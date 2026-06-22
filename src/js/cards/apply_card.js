@@ -50,111 +50,195 @@ supabaseClient
 `;
 }else{
 apply = `
-  <div class="w-full max-w-xl mx-auto relative animate-[fadeIn_0.8s_ease-in-out]">
-    <!-- Decorative Background Orbs -->
-    <div class="absolute -top-8 -left-8 w-32 h-32 bg-indigo-200 rounded-full mix-blend-multiply filter blur-2xl opacity-70 animate-pulse"></div>
-    <div class="absolute -bottom-8 -right-8 w-32 h-32 bg-cyan-200 rounded-full mix-blend-multiply filter blur-2xl opacity-70 animate-pulse"></div>
+  <div class="w-full max-w-2xl mx-auto px-4 py-6 animate-[fadeIn_0.6s_ease-out]">
 
-    <div class="relative bg-white/70 backdrop-blur-2xl rounded-3xl shadow-2xl border border-white/50 p-8 sm:p-10 overflow-hidden">
-      
-      <!-- Header -->
-      <div class="text-center mb-8">
-        <div class="mx-auto w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo-500 to-cyan-500 flex items-center justify-center shadow-lg shadow-indigo-500/30 mb-5">
-          <i class="bi bi-file-earmark-arrow-up-fill text-white text-xl"></i>
-        </div>
-        <h2 class="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-indigo-900 to-slate-900 bg-clip-text text-transparent tracking-tight">
-          Apply
-        </h2>
-        <p class="mt-2 text-sm text-slate-500 font-medium">
-          Complete the form below to apply for your chosen program.
-        </p>
-      </div>
+    <div class="overflow-hidden rounded-3xl bg-white shadow-xl shadow-blue-100/30 border border-blue-100">
 
-      <!-- Section 1: Personal Information -->
-        <div class="bg-slate-50/80 p-5 sm:p-6 rounded-2xl border border-slate-100 shadow-sm">
-          <h3 class="text-xs font-extrabold text-indigo-600 uppercase tracking-widest mb-5 flex items-center gap-2">
-            <span class="w-2 h-2 bg-indigo-500 rounded-full"></span> Personal Information
-          </h3>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-x-5 gap-y-5">
-            <div>
-              <label class="block text-xs font-bold text-slate-700 mb-1.5 tracking-wide">NAME</label>
-              <input type="text" id="apply_name" placeholder="First name" required class="w-full px-4 py-3.5 text-sm font-medium text-slate-900 bg-white/80 border border-slate-200 rounded-xl focus:outline-none focus:ring-4 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all duration-300 placeholder:text-slate-400 shadow-sm">
+        <!-- Hero Header -->
+        <div class="relative overflow-hidden bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 px-6 sm:px-8 py-8 text-white">
+
+            <div class="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full blur-3xl"></div>
+
+            <div class="relative flex items-center gap-4">
+
+                <div class="w-14 h-14 rounded-2xl bg-white/15 backdrop-blur-sm flex items-center justify-center">
+                    <i class="bi bi-mortarboard-fill text-2xl"></i>
+                </div>
+
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-bold">
+                        Start Your Application
+                    </h2>
+
+                    <p class="text-blue-100 text-sm mt-1">
+                        Join DIMT and begin your journey toward professional success.
+                    </p>
+                </div>
+
             </div>
-
-            <div>
-              <label class="block text-xs font-bold text-slate-700 mb-1.5 tracking-wide">SURNAME</label>
-              <input type="text" id="apply_surname" placeholder="Last name" required class="w-full px-4 py-3.5 text-sm font-medium text-slate-900 bg-white/80 border border-slate-200 rounded-xl focus:outline-none focus:ring-4 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all duration-300 placeholder:text-slate-400 shadow-sm">
-            </div>
-
-            <div>
-              <label class="block text-xs font-bold text-slate-700 mb-1.5 tracking-wide">EMAIL ADDRESS</label>
-              <input type="email" id="apply_email" placeholder="you@example.com" required class="w-full px-4 py-3.5 text-sm font-medium text-slate-900 bg-white/80 border border-slate-200 rounded-xl focus:outline-none focus:ring-4 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all duration-300 placeholder:text-slate-400 shadow-sm">
-            </div>
-
-            <div>
-              <label class="block text-xs font-bold text-slate-700 mb-1.5 tracking-wide">PHONE NUMBER</label>
-              <input type="tel" id="apply_phone" placeholder="+263 8XX XXX XXX" required class="w-full px-4 py-3.5 text-sm font-medium text-slate-900 bg-white/80 border border-slate-200 rounded-xl focus:outline-none focus:ring-4 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all duration-300 placeholder:text-slate-400 shadow-sm">
-            </div>
-          </div>
-        </div>
-
-        <!-- Section 2: Academic & Documents -->
-        <div class="bg-slate-50/80 p-5 sm:p-6 rounded-2xl border border-slate-100 shadow-sm space-y-5">
-          
-          <!-- Program Selection -->
-          <div>
-            <label class="block text-xs font-bold text-slate-700 mb-1.5 tracking-wide">PROGRAM TO PURSUE</label>
-            <select required id="apply_program" class="w-full px-4 py-3.5 text-sm font-medium text-slate-900 bg-white/80 border border-slate-200 rounded-xl focus:outline-none focus:ring-4 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all duration-200 appearance-none shadow-sm bg-[url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20fill%3D%22none%22%20viewBox%3D%220%200%2020%2020%22%3E%3Cpath%20stroke%3D%22%236b7280%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%221.5%22%20d%3D%22M6%208l4%204%204-4%22/%3E%3C/svg%3E')] bg-no-repeat bg-[center_right_1rem]">
-              <option value="" disabled selected>Select program</option>
-                <option value="P001">Public Health</option>
-                <option value="P002">Business Studies</option>
-                <option value="P003">Tailoring</option>
-                <option value="P004">Agro Business</option>
-                <option value="P005">Hotel Management</option>
-                <option value="P006">Computer Engineering</option>
-                <option value="P007">Community Development</option>
-                <option value="P008">HIV & AIDS Management</option>
-                <option value="P009">Nutrition & Food Security</option>
-                <option value="P010">Human Resource Management</option>
-                <option value="P011">Comp Science & Cyber Security</option>
-                <option value="P012">Accounting</option>
-            </select>
-          </div>
-
-          
 
         </div>
 
-        <!-- Important Notice -->
-        <div class="bg-amber-50/80 border border-amber-200/60 rounded-2xl p-4 flex items-start gap-3.5 shadow-sm">
-  <div class="flex-shrink-0 mt-0.5">
-    <i class="bi bi-exclamation-triangle-fill text-amber-500 text-lg"></i>
-  </div>
+        <!-- Form -->
+        <div class="p-6 sm:p-8 space-y-8">
 
-  <div>
-    <h4 class="text-sm font-extrabold text-amber-900">
-      Important Notice
-    </h4>
+            <!-- Personal Information -->
+            <div>
 
-    <p class="text-xs font-medium text-amber-800/80 mt-1">
-      Upon acceptance, applicants are required to pay an
-      <span class="font-extrabold text-amber-900">Application Fee of MWK 15,000</span>
-      and a
-      <span class="font-extrabold text-amber-900">Medical Examination Fee of MWK 10,000</span>.
-    </p>
-  </div>
-</div>
+                <h3 class="flex items-center gap-2 text-sm font-bold text-slate-800 mb-5">
+                    <i class="bi bi-person-circle text-blue-600"></i>
+                    Personal Information
+                </h3>
 
-        <!-- Submit Button -->
-        <div class="pt-2">
-          <button id='apply_btn' onclick="applyNOW()" 
-            class="w-full flex items-center justify-center gap-2 text-sm font-bold text-white bg-gradient-to-r from-indigo-600 to-cyan-600 hover:from-indigo-700 hover:to-cyan-700 px-6 py-4 rounded-2xl transition-all duration-300 cursor-pointer shadow-lg shadow-indigo-500/30 hover:shadow-xl hover:shadow-indigo-500/40 focus:outline-none focus:ring-4 focus:ring-indigo-300 active:scale-[0.98]"
-          >
-            Submit Application <i class="bi bi-send-fill"></i>
-          </button>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-2">
+                            First Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="apply_name"
+                            placeholder="John"
+                            required
+                            class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition-all">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-2">
+                            Last Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="apply_surname"
+                            placeholder="Doe"
+                            required
+                            class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition-all">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-2">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="apply_email"
+                            placeholder="you@example.com"
+                            required
+                            class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition-all">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-2">
+                            Phone Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="apply_phone"
+                            placeholder="+265 XXX XXX XXX"
+                            required
+                            class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition-all">
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Program Selection -->
+            <div>
+
+                <h3 class="flex items-center gap-2 text-sm font-bold text-slate-800 mb-5">
+                    <i class="bi bi-book-half text-blue-600"></i>
+                    Program Selection
+                </h3>
+
+                <div>
+
+                    <label class="block text-sm font-medium text-slate-700 mb-2">
+                        Program to Pursue
+                    </label>
+
+                    <select
+                        required
+                        id="apply_program"
+                        class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition-all">
+
+                        <option value="" disabled selected>
+                            Select your preferred program
+                        </option>
+
+                        <option value="P001">Public Health</option>
+                        <option value="P002">Business Studies</option>
+                        <option value="P003">Tailoring</option>
+                        <option value="P004">Agro Business</option>
+                        <option value="P005">Hotel Management</option>
+                        <option value="P006">Computer Engineering</option>
+                        <option value="P007">Community Development</option>
+                        <option value="P008">HIV & AIDS Management</option>
+                        <option value="P009">Nutrition & Food Security</option>
+                        <option value="P010">Human Resource Management</option>
+                        <option value="P011">Comp Science & Cyber Security</option>
+                        <option value="P012">Accounting</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+            <!-- Fee Notice -->
+            <div class="rounded-2xl bg-blue-50 border border-blue-100 p-5">
+
+                <div class="flex gap-3">
+
+                    <div class="w-10 h-10 rounded-xl bg-blue-100 flex items-center justify-center flex-shrink-0">
+                        <i class="bi bi-info-circle-fill text-blue-600"></i>
+                    </div>
+
+                    <div>
+
+                        <h4 class="font-semibold text-blue-900">
+                            Application Fees
+                        </h4>
+
+                        <p class="text-sm text-blue-700 mt-2 leading-relaxed">
+                            Application Fee:
+                            <span class="font-semibold">
+                                MWK 15,000
+                            </span>
+                            <br>
+
+                            Medical Examination Fee:
+                            <span class="font-semibold">
+                                MWK 10,000
+                            </span>
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Submit -->
+            <button
+                id="apply_btn"
+                onclick="applyNOW()"
+                class="w-full py-4 rounded-2xl bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 text-white font-semibold shadow-lg shadow-blue-500/20 hover:shadow-blue-500/30 transition-all duration-300">
+
+                Submit Application
+
+            </button>
+
         </div>
+
     </div>
-  </div>
+
+</div>
 `;
 }
 document.getElementById("view").innerHTML=apply;

@@ -418,7 +418,7 @@ function allow(){
 function callDATA(pass_key){
   
   document.getElementById('sideNAV').style.display = '';
-  document.getElementById("mobile_menu").innerHTML =mobile; 
+  document.getElementById("mobile_menu").innerHTML =3; 
   document.getElementById('Before_links').style.display = 'none';
   document.getElementById('After_links').style.display = '';
   

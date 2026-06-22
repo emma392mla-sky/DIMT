@@ -1,88 +1,94 @@
 
+
 //login card
 
-const logins = `
-  <div class="w-full max-w-md mx-auto relative animate-[fadeIn_0.8s_ease-in-out]">
-    <!-- Decorative Background Orbs -->
-    <div class="absolute -top-8 -left-8 w-32 h-32 bg-indigo-200 rounded-full mix-blend-multiply filter blur-2xl opacity-70 animate-pulse"></div>
-    <div class="absolute -bottom-8 -right-8 w-32 h-32 bg-cyan-200 rounded-full mix-blend-multiply filter blur-2xl opacity-70 animate-pulse"></div>
+logins = `
+  <div class="w-full max-w-md mx-auto relative animate-[fadeIn_0.6s_ease-out] pt-4 pb-8 px-4 sm:px-0">
 
-    <div class="relative bg-white/70 backdrop-blur-2xl rounded-3xl shadow-2xl border border-white/50 p-8 sm:p-10 overflow-hidden">
-      
-      
-      <div class="text-center mb-8">
-        <div class="mx-auto w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo-500 to-cyan-500 flex items-center justify-center shadow-lg shadow-indigo-500/30 mb-5">
-          <i class="bi bi-shield-lock-fill text-white text-xl"></i>
-        </div>
-        <h2 class="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-indigo-900 to-slate-900 bg-clip-text text-transparent tracking-tight">
-          Welcome back
-        </h2>
-        <p class="mt-2 text-sm text-slate-500 font-medium">
-          Enter your credentials to access your account
-        </p>
-      </div>
+    <div class="overflow-hidden rounded-3xl bg-white shadow-xl shadow-blue-100/40 border border-blue-100">
 
-      
-      <form class="space-y-5" onsubmit="event.preventDefault();">
-        
-        <!-- id details -->
-        <div>
-          <label class="block text-xs font-bold text-slate-700 mb-1.5 tracking-wide">STUDENT #</label>
-          <div class="relative">
-            <i class="bi bi-person-vcard absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
-            <input id='st_id' type="text" value="" placeholder="20200501"
-              required class="w-full pl-11 pr-4 py-3.5 text-sm font-medium text-slate-900 bg-white/60 border border-slate-200 rounded-2xl focus:outline-none focus:ring-4 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all duration-300 placeholder:text-slate-400 shadow-sm"
-            />
-          </div>
+        <!-- Top Accent -->
+        <div class="h-1.5 bg-gradient-to-r from-blue-600 via-indigo-500 to-violet-500"></div>
+
+        <!-- Header -->
+        <div class="px-6 sm:px-8 pt-7 pb-6">
+
+            <div class="flex items-center gap-3 mb-4">
+
+                <div class="w-12 h-12 rounded-2xl bg-blue-100 flex items-center justify-center">
+                    <i class="bi bi-person-circle text-blue-600 text-xl"></i>
+                </div>
+
+                <div>
+                    <h2 class="text-2xl font-bold text-slate-900">
+                        Welcome Back 
+                    </h2>
+
+                    <p class="text-sm text-slate-500">
+                        Sign in to continue your academic journey
+                    </p>
+                </div>
+
+            </div>
+
         </div>
 
+        <!-- Form -->
+        <form class="px-6 sm:px-8 pb-8 space-y-5" onsubmit="event.preventDefault();">
 
-<div>
-  <label class="block text-xs font-bold text-slate-700 mb-1.5 tracking-wide">PASSWORD</label>
+            <div>
 
-  <div class="relative">
-    <i class="bi bi-key absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                <label class="block text-sm font-semibold text-slate-700 mb-2">
+                    Student ID
+                </label>
 
-    <input id="st_pwd" type="password" placeholder="••••••••" required
-      class="w-full pl-11 pr-10 py-3.5 border rounded-2xl">
+                <input
+                    id="st_id"
+                    type="text"
+                    placeholder="20200501"
+                    required
+                    class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition-all">
 
-    <i id="togglePwd"
-      class="bi bi-eye absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer"
-      onclick="
-        const input = document.getElementById('st_pwd');
-        input.type = input.type === 'password' ? 'text' : 'password';
-        this.classList.toggle('bi-eye');
-        this.classList.toggle('bi-eye-slash');
-      ">
-    </i>
-  </div>
-</div>
+            </div>
 
-        
-        <div class="flex items-center justify-between">
-          <a href="#" class="text-xs font-bold text-indigo-600 hover:text-indigo-500 transition-colors duration-200">
-            Forgot password?
-          </a>
-        </div>
+            <div>
 
-        <!-- Submit Button -->
-        <div class="pt-2">
-          <button 
-            type="submit" 
-            onclick='signin()' id='signin_btn' class="w-full flex items-center justify-center gap-2 text-sm font-bold text-white bg-gradient-to-r from-indigo-600 to-cyan-600 hover:from-indigo-700 hover:to-cyan-700 px-6 py-4 rounded-2xl transition-all duration-300 cursor-pointer shadow-lg shadow-indigo-500/30 hover:shadow-xl hover:shadow-indigo-500/40 focus:outline-none focus:ring-4 focus:ring-indigo-300 active:scale-[0.98]"
-          >
-            Sign In <i class="bi bi-arrow-right"></i>
-          </button>
-        </div>
+                <label class="block text-sm font-semibold text-slate-700 mb-2">
+                    Password
+                </label>
 
-      </form>
+                <input
+                    id="st_pwd"
+                    type="password"
+                    placeholder="••••••••"
+                    required
+                    class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition-all">
+
+            </div>
+
+            <div class="flex justify-end">
+
+                <a href="#"
+                    class="text-sm font-medium text-blue-600 hover:text-blue-700">
+                    Forgot password?
+                </a>
+
+            </div>
+
+            <button
+                id="signin_btn"
+                onclick="signin()"
+                type="submit"
+                class="w-full py-3.5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold shadow-lg shadow-blue-500/20 hover:shadow-blue-500/30 transition-all">
+
+                Sign In
+
+            </button>
+
+        </form>
+
     </div>
-  </div>
+
+</div>
 `;
-
-
-
-
-
-
 
