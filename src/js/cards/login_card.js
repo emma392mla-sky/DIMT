@@ -1,7 +1,7 @@
 
 //login card
 
-login = `
+const logins = `
   <div class="w-full max-w-md mx-auto relative animate-[fadeIn_0.8s_ease-in-out]">
     <!-- Decorative Background Orbs -->
     <div class="absolute -top-8 -left-8 w-32 h-32 bg-indigo-200 rounded-full mix-blend-multiply filter blur-2xl opacity-70 animate-pulse"></div>
@@ -79,4 +79,10 @@ login = `
     </div>
   </div>
 `;
+
+
+
+
+
+
 
