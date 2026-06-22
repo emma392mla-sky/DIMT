@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - DIMT</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
+    
+    <!-- Supabase & Auth Script -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src='Admin_Auth.js'></script>
+
+    <style>
+        body { font-family: 'DM Sans', sans-serif; }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .login-card { animation: fadeUp 0.5s ease forwards; }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+
+    <div class="login-card bg-white w-full max-w-sm p-8 rounded-2xl shadow-lg border border-gray-100">
+        
+        <!-- Logo & Header -->
+        <div class="text-center mb-8">
+            <img src="assets/DIMT.png" alt="DIMT Logo" class="w-20 h-20 mx-auto rounded-xl object-cover shadow-sm mb-4 border border-gray-50">
+            <h1 class="text-2xl font-bold text-gray-800">DIMT</h1>
+            <p class="text-sm text-gray-400 mt-1">Center of great success</p>
+        </div>
+
+        <!-- Login Form -->
+        <div class="space-y-4">
+            <!-- Back Button -->
+                <button onclick="history.back()"
+                    class="absolute top-4 left-4 flex items-center justify-center w-10 h-10 rounded-full bg-white               shadow-sm border border-gray-200 hover:bg-gray-50 transition group">
+                
+                    <i class="bi bi-arrow-left text-gray-600 group-hover:-translate-x-0.5 transition"></i>
+                
+                </button>
+            <div class="relative">
+                <i class="bi bi-envelope absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
+                <input 
+                    type="email" 
+                    id="email" 
+                    placeholder="Enter email" 
+                    class="w-full pl-11 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all"
+                >
+            </div>
+
+            <div class="relative">
+                <i class="bi bi-lock absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
+                <input 
+                    type="password" 
+                    id="password" 
+                    placeholder="Enter password" 
+                    class="w-full pl-11 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all"
+                >
+            </div>
+
+            <button 
+                onclick="login()" 
+                id="loginBtn"
+                class="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-xl shadow-sm transition-all duration-200 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500/30 flex items-center justify-center gap-2"
+            >
+                <span id="btnText">Sign In</span>
+                <i class="bi bi-arrow-right text-xs" id="btnIcon"></i>
+            </button>
+        </div>
+
+        <!-- Message Area (for errors/success) -->
+        <div id="loginMessage" class="text-center text-sm mt-4 h-5"></div>
+
+    </div>
+
+</body>
+</html>

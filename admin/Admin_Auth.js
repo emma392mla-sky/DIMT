@@ -31,7 +31,6 @@ async function login() {
     return;
 }
 
-   
-    location.href = "https://dimt-three.vercel.app/admin/dashboard";
+    location.href = "dashboard/Admin_Dashboard.html";
     localStorage.setItem('card',0); // force to land on dashboard card
 }
