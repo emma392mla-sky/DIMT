@@ -90,9 +90,18 @@
             100% { background-position: 0% 50%; }
         }
 
-        input, select, option { text-transform: uppercase; }
-        input:invalid, select:invalid { border: 2px solid red; }
-        input:valid, select:valid { border: 2px solid green; }
+        /*input, select, option { text-transform: uppercase; }*/
+        input:invalid:not(:placeholder-shown),
+        select:invalid{
+    border-color:#f43f5e;
+    box-shadow:0 0 0 4px rgba(244,63,94,.10);
+    }
+
+input:valid,
+select:valid{
+    border-color:#3b82f6;
+    box-shadow:0 0 0 4px rgba(59,130,246,.10);
+}
 
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
@@ -442,7 +451,7 @@
         setInterval(function() {
             img.style.opacity = "0";
             setTimeout(function() {
-                var which = Math.floor(Math.random() * 11) + 1;
+                var which = Math.floor(Math.random() * 10) + 1;
                 img.src = 'src/img/gala' + which + '.jpg';
                 img.onload = function() { img.style.opacity = "1"; };
             }, 800);
