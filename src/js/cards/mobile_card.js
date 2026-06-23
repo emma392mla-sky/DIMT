@@ -26,8 +26,9 @@ mobile =`
 
 document.addEventListener("DOMContentLoaded", function () {
     const isMobile = window.matchMedia("(max-width: 768px)").matches;
+    const key = sessionStorage.getItem('session_token'); 
 
-    if (isMobile) {
+    if (isMobile && key !='null') {
         const mobileMenu = document.getElementById("mobile_menu");
         mobileMenu.innerHTML = mobile;
 
