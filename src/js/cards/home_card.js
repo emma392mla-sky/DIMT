@@ -39,7 +39,7 @@ access = `
                             </button>
                         
                             <button
-                                class="whitespace-nowrap flex items-center bg-white/[0.12] text-white hover:bg-white/[0.2] border border-white/[0.2] hover:border-white/[0.3] px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 active:scale-[0.97] backdrop-blur-sm">
+                                class="hidden whitespace-nowrap flex items-center bg-white/[0.12] text-white hover:bg-white/[0.2] border border-white/[0.2] hover:border-white/[0.3] px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 active:scale-[0.97] backdrop-blur-sm">
                         
                                 <i class="bi bi-download mr-1.5 text-xs opacity-70"></i>
                                 Download Timetable
