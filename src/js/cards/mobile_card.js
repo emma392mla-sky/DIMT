@@ -26,13 +26,16 @@ mobile =`
 
 document.addEventListener("DOMContentLoaded", function () {
     const isMobile = window.matchMedia("(max-width: 768px)").matches;
-    const key = sessionStorage.getItem('session_token'); 
+    const key = sessionStorage.getItem("session_token");
 
-    if (isMobile && key !='null') {
-        const mobileMenu = document.getElementById("mobile_menu");
+    const mobileMenu = document.getElementById("mobile_menu");
+
+    if (!mobileMenu) return;
+
+    if (isMobile && key) {
         mobileMenu.innerHTML = mobile;
 
-        // optional: auto-open menu if you have a toggle class
+        // optional auto-open
         mobileMenu.classList.add("active");
     }
 });
