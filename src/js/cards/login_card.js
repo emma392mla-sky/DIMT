@@ -66,14 +66,7 @@ logins = `
 
             </div>
 
-            <div class="flex justify-end">
-
-                <a href="#"
-                    class="text-sm font-medium text-blue-600 hover:text-blue-700">
-                    Forgot password?
-                </a>
-
-            </div>
+            
 
             <button
                 id="signin_btn"
