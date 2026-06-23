@@ -23,4 +23,15 @@ mobile =`
             </button>
         </div>
 `;
-//document.getElementById("mobile_menu").innerHTML =mobile;
+
+document.addEventListener("DOMContentLoaded", function () {
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+    if (isMobile) {
+        const mobileMenu = document.getElementById("mobile_menu");
+        mobileMenu.innerHTML = mobile;
+
+        // optional: auto-open menu if you have a toggle class
+        mobileMenu.classList.add("active");
+    }
+});

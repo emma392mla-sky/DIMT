@@ -22,30 +22,30 @@ access = `
 
             <!-- Left Content -->
             <div class="lg:col-span-7 p-6 sm:p-8 lg:p-10 flex flex-col justify-center">
-                <div class="inline-flex items-center gap-2 text-[11px] font-semibold text-white/80 bg-white/[0.12] border border-white/[0.15] px-3 py-1.5 rounded-full tracking-wide uppercase w-fit backdrop-blur-sm">
-                    <i class="bi bi-mortarboard-fill text-[10px] text-amber-300"></i>
-                    <span>DIMT Student Portal</span>
-                </div>
+                
 
                 <h1 class="text-[30px] sm:text-4xl lg:text-[44px] font-extrabold text-white mt-6 tracking-[-0.035em] leading-[1.1]">
                     Hi,
                     <span id='db_st_name' class="text-3xl">Student</span>
                 </h1>
 
-                <p class="mt-4 text-blue-100/70 max-w-md leading-relaxed text-[15px]">
-                    Access your courses, results, schedules, and academic resources from your personalized dashboard.
-                </p>
-
-                <div class="flex flex-wrap gap-3 mt-8">
-                    <button onclick='view_results()' class="bg-white/[0.12] text-white hover:bg-white/[0.2] border border-white/[0.2] hover:border-white/[0.3] px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 active:scale-[0.97] backdrop-blur-sm">
-                        View Results
-                        <i class="bi bi-arrow-right ml-1 text-xs inline-block transition-transform duration-200 group-hover:translate-x-0.5"></i>
-                    </button>
-                    <button class="bg-white/[0.12] text-white hover:bg-white/[0.2] border border-white/[0.2] hover:border-white/[0.3] px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 active:scale-[0.97] backdrop-blur-sm">
-                        <i class="bi bi-download mr-1.5 text-xs opacity-70"></i>
-                        Download Timetable
-                    </button>
-                </div>
+                        <div class="flex flex-nowrap gap-3 mt-8 overflow-x-auto">
+                            
+                            <button onclick="view_results()"
+                                class="whitespace-nowrap flex items-center bg-white/[0.12] text-white hover:bg-white/[0.2] border border-white/[0.2] hover:border-white/[0.3] px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 active:scale-[0.97] backdrop-blur-sm">
+                                
+                                View Results
+                                <i class="bi bi-arrow-right ml-1 text-xs transition-transform duration-200"></i>
+                            </button>
+                        
+                            <button
+                                class="whitespace-nowrap flex items-center bg-white/[0.12] text-white hover:bg-white/[0.2] border border-white/[0.2] hover:border-white/[0.3] px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 active:scale-[0.97] backdrop-blur-sm">
+                        
+                                <i class="bi bi-download mr-1.5 text-xs opacity-70"></i>
+                                Download Timetable
+                            </button>
+                        
+                        </div>
             </div>
 
             <!-- Right — Profile Card -->
