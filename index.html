@@ -105,9 +105,9 @@
             100% { background-position: 0% 50%; }
         }
 
-        input,select,option{
+        /*input,select,option{
           text-transform: uppercase;
-        }
+        }*/
 
 input:invalid:not(:placeholder-shown),
 select:invalid{
@@ -245,7 +245,7 @@ select:valid{
             
             <!-- Desktop Links -->
             <div class="hidden md:flex items-center gap-1">
-                <a class="text-[13px] font-medium text-slate-500 hover:text-slate-900 hover:bg-slate-100 px-3 py-2 rounded-lg transition-colors duration-150 cursor-pointer" onclick="window.location='admin/index.html'">
+                <a class="text-[13px] font-medium text-slate-500 hover:text-slate-900 hover:bg-slate-100 px-3 py-2 rounded-lg transition-colors duration-150 cursor-pointer" onclick="load()">
                     Admin
                 </a>
                 <a class="text-[13px] font-medium text-slate-500 hover:text-slate-900 hover:bg-slate-100 px-3 py-2 rounded-lg transition-colors duration-150 cursor-pointer" onclick="nav('dashboard');">
@@ -497,6 +497,21 @@ function view_results() {
     });
     },60000);
     });
+}
+
+function load(){
+    document.getElementById('view').innerHTML = `
+<div class="fixed inset-0 flex items-center justify-center bg-white z-50">
+    <div class="text-center">
+        <div class="w-10 h-10 border-4 border-gray-200 border-t-blue-500 rounded-full animate-spin mx-auto"></div>
+        <p class="mt-4 text-gray-600 font-medium">Please wait...</p>
+    </div>
+</div>
+`;
+
+setTimeout(() => {
+    window.location = 'admin/index.html';
+}, 500);
 }
 </script>
 </body>

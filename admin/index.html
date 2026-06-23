@@ -37,9 +37,9 @@
         </div>
 
         <!-- Login Form -->
-        <div class="space-y-4">
+        <div class="space-y-4" id='parent'>
             <!-- Back Button -->
-                <button onclick="window.location='https://dimt-three.vercel.app/';"
+                <button onclick="load()"
                     class="absolute top-4 left-4 flex items-center justify-center w-10 h-10 rounded-full bg-white               shadow-sm border border-gray-200 hover:bg-gray-50 transition group">
                 
                     <i class="bi bi-arrow-left text-gray-600 group-hover:-translate-x-0.5 transition"></i>
@@ -80,5 +80,22 @@
 
     </div>
 
+
+<script>
+    function load(){
+        document.getElementById('parent').innerHTML = `
+<div class="fixed inset-0 flex items-center justify-center bg-white z-50">
+    <div class="text-center">
+        <div class="w-10 h-10 border-4 border-gray-200 border-t-blue-500 rounded-full animate-spin mx-auto"></div>
+        <p class="mt-4 text-gray-600 font-medium">Please wait...</p>
+    </div>
+</div>
+`;
+
+setTimeout(() => {
+    window.location = '../index.html';
+}, 500);
+    }
+</script>
 </body>
 </html>

@@ -9,9 +9,7 @@ const profile = `
 
         <!-- Page Header -->
         <div class="text-center mb-8">
-            <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-blue-600 text-white mb-4 shadow-lg shadow-blue-200">
-                <i class="bi bi-person-gear text-2xl"></i>
-            </div>
+            
             <h1 class="text-3xl font-extrabold text-blue-950 tracking-tight">My Profile</h1>
             <p class="text-blue-400 mt-1 text-sm">Manage your personal and academic details</p>
         </div>
@@ -94,12 +92,47 @@ const profile = `
 
                         <!-- Profile Picture -->
                         <div class="md:col-span-2">
-                            <label class="block text-xs font-bold text-blue-400 uppercase mb-2">Profile Picture</label>
-                            <div class="flex gap-2">
-                                <input type="file" id="profile_pic" accept='.png,.jpg' class="flex-1 cursor-pointer w-full bg-white border border-blue-200 text-blue-900 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 outline-none transition-all">
-                                <button id='upload_btn' onclick="updatePic()" class="px-4 py-3 bg-blue-50 hover:bg-blue-100 text-blue-600 border border-blue-200 rounded-xl text-sm font-semibold transition-all whitespace-nowrap">Upload</button>
-                            </div>
-                        </div>
+    <label class="block text-xs font-bold text-blue-500 uppercase tracking-wider mb-3">
+        Profile Picture
+    </label>
+
+    <div class="flex flex-col sm:flex-row sm:items-center gap-3">
+        
+        <!-- Custom file trigger -->
+        <label for="profile_pic"
+            class="flex-1 cursor-pointer group bg-white border border-blue-200 hover:border-blue-400 rounded-2xl px-4 py-3 flex items-center justify-between transition-all shadow-sm hover:shadow-md">
+
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center group-hover:bg-blue-100 transition">
+                    <i class="bi bi-upload text-blue-600"></i>
+                </div>
+
+                <div>
+                    <p class="text-sm font-semibold text-blue-900">Choose image</p>
+                    <p class="text-xs text-gray-400">PNG or JPG (recommended square)</p>
+                </div>
+            </div>
+
+            <span class="text-xs text-blue-500 font-medium">Browse</span>
+
+            <input
+                type="file"
+                id="profile_pic"
+                accept=".png,.jpg,.jpeg"
+                class="hidden"
+            />
+        </label>
+
+        <!-- Upload button -->
+        <button
+            id="upload_btn"
+            onclick="updatePic()"
+            class="sm:w-auto w-full px-5 py-3 rounded-2xl bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold shadow-sm hover:shadow-md transition-all active:scale-[0.98]"
+        >
+            Upload
+        </button>
+    </div>
+</div>
 
                     </div>
                 </div>

@@ -15,9 +15,9 @@ logins = `
 
             <div class="flex items-center gap-3 mb-4">
 
-                <div class="w-12 h-12 rounded-2xl bg-blue-100 flex items-center justify-center">
-                    <i class="bi bi-person-circle text-blue-600 text-xl"></i>
-                </div>
+                <div class="size-10 sm:size-12 rounded-full bg-blue-100 flex items-center justify-center shrink-0">
+    <i class="bi bi-person-circle text-blue-600 text-lg sm:text-xl"></i>
+</div>
 
                 <div>
                     <h2 class="text-2xl font-bold text-slate-900">

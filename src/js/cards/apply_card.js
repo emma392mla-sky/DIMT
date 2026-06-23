@@ -23,7 +23,7 @@ supabaseClient
     if (examValue2 == 'false') {
 
   apply = `
-<div class="animate-[fadeIn_0.8s_ease-in-out] min-h-screen flex items-center justify-center bg-gradient-to-br from-white via-sky-50 to-blue-50 p-6">
+<div class="w-full animate-[fadeIn_0.8s_ease-in-out] min-h-screen flex items-center justify-center bg-gradient-to-br from-white via-sky-50 to-blue-50 p-6">
 
   <div class="max-w-md w-full bg-white border border-blue-100 rounded-3xl shadow-lg p-8 text-center">
 
@@ -61,17 +61,15 @@ apply = `
 
             <div class="relative flex items-center gap-4">
 
-                <div class="w-14 h-14 rounded-2xl bg-white/15 backdrop-blur-sm flex items-center justify-center">
-                    <i class="bi bi-mortarboard-fill text-2xl"></i>
-                </div>
+                
 
                 <div>
                     <h2 class="text-2xl sm:text-3xl font-bold">
-                        Start Your Application
+                        Apply Now
                     </h2>
 
                     <p class="text-blue-100 text-sm mt-1">
-                        Join DIMT and begin your journey toward professional success.
+                        Your future starts here
                     </p>
                 </div>
 
@@ -100,7 +98,7 @@ apply = `
                         <input
                             type="text"
                             id="apply_name"
-                            placeholder="John"
+                            placeholder="Mercy"
                             required
                             class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition-all">
                     </div>
@@ -113,7 +111,7 @@ apply = `
                         <input
                             type="text"
                             id="apply_surname"
-                            placeholder="Doe"
+                            placeholder="Darison"
                             required
                             class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition-all">
                     </div>
@@ -126,7 +124,7 @@ apply = `
                         <input
                             type="email"
                             id="apply_email"
-                            placeholder="you@example.com"
+                            placeholder="you@gmail.com"
                             required
                             class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition-all">
                     </div>
@@ -139,7 +137,7 @@ apply = `
                         <input
                             type="tel"
                             id="apply_phone"
-                            placeholder="+265 XXX XXX XXX"
+                            placeholder="e.g 0812345678"
                             required
                             class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition-all">
                     </div>
@@ -168,7 +166,7 @@ apply = `
                         class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition-all">
 
                         <option value="" disabled selected>
-                            Select your preferred program
+                            Choose Program
                         </option>
 
                         <option value="P001">Public Health</option>
@@ -190,35 +188,29 @@ apply = `
 
             </div>
 
-            <!-- Fee Notice -->
-            <div class="rounded-2xl bg-blue-50 border border-blue-100 p-5">
-
-                <div class="flex gap-3">
-
-                    <div class="w-10 h-10 rounded-xl bg-blue-100 flex items-center justify-center flex-shrink-0">
-                        <i class="bi bi-info-circle-fill text-blue-600"></i>
-                    </div>
-
-                    <div>
-
-                        <h4 class="font-semibold text-blue-900">
-                            Application Fees
-                        </h4>
-
-                        <p class="text-sm text-blue-700 mt-2 leading-relaxed">
-                            Application Fee:
-                            <span class="font-semibold">
-                                MWK 15,000
-                            </span>
-                            <br>
-
-                            Medical Examination Fee:
-                            <span class="font-semibold">
-                                MWK 10,000
-                            </span>
-                        </p>
-
-                    </div>
+                                    <!-- Fee Notice -->
+                                    <div class="rounded-2xl bg-blue-50 border border-blue-100 p-5">
+                        
+                                        <div class="flex gap-3">
+                        
+                        
+                                            <div>
+                            <h4 class="font-semibold text-blue-900">
+                                Fees
+                            </h4>
+                        
+                            <p class="text-sm text-blue-700 mt-2 leading-relaxed">
+                                Application Fee:
+                                <span class="font-semibold">MWK 15,000</span><br>
+                        
+                                Medical Fee:
+                                <span class="font-semibold">MWK 10,000</span><br>
+                        
+                                <span class="text-xs text-blue-600">
+                                    Payable after admission is approved and the student reports to campus.
+                                </span>
+                            </p>
+                        </div>
 
                 </div>
 

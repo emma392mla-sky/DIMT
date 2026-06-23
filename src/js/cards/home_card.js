@@ -104,7 +104,7 @@ access = `
                 <i class="bi bi-book text-blue-500 text-sm"></i>
             </div>
             <p class="text-[10px] font-semibold text-slate-400 tracking-widest uppercase">Courses</p>
-            <p class="text-2xl font-bold text-slate-900 mt-1 tracking-tight" id="all_courses">
+            <p class="text-2xl font-bold text-slate-900/50 mt-1 tracking-tight" id="all_courses">
                 <span class="inline-block w-7 h-6 rounded bg-slate-100 animate-pulse"></span>
             </p>
         </div>
@@ -114,7 +114,7 @@ access = `
                 <i class="bi bi-trophy text-amber-500 text-sm"></i>
             </div>
             <p class="text-[10px] font-semibold text-slate-400 tracking-widest uppercase">GPA</p>
-            <p class="text-2xl font-bold text-slate-900 mt-1 tracking-tight" id="st_per">
+            <p class="text-lg font-bold text-slate-900/50 mt-1 tracking-tight" id="st_per">
                 <span class="inline-block w-7 h-6 rounded bg-slate-100 animate-pulse"></span>
             </p>
         </div>

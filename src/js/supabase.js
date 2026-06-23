@@ -597,7 +597,7 @@ function ST(courses, STlevel) {
 
         // Build the HTML for the course card
         output += `
-          <div class="border border-gray-200 rounded-xl p-4 hover:bg-gray-50 transition relative">
+          <div class="border border-gray-200 rounded-xl p-4 my-2 hover:bg-gray-50 transition relative">
 
             <div class="wrapper hover:text-gray/500 bi bi-lock-fill text-2xl text-gray-200 border-none absolute inset-0 bg-white z-10 grid place-items-center rounded-xl">
               <b class='text-lg'>locked</b>
