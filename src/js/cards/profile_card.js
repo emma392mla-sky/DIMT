@@ -1,7 +1,7 @@
 // student profile card
 
 const profile = `
-<div class="max-w-2xl mx-auto p-4 animate-[fadeIn_0.5s_ease-out]">
+<div class="h-[100%] my-5 max-w-2xl mx-auto p-4 animate-[fadeIn_0.5s_ease-out]">
 
     <!-- Compact Header -->
     <div class="bg-white rounded-2xl border border-slate-200/80 shadow-sm overflow-hidden">
