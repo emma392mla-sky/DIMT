@@ -21,7 +21,7 @@
             }
         }
     </script>
-    <title>DDC</title>
+    <title>DIMT</title>
     <style>
         body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
 
@@ -221,11 +221,11 @@ select:valid{
         <!-- Logo & Name -->
         <div class="flex items-center gap-3 min-w-0">
             <div class="w-9 h-9 lg:w-10 lg:h-10 rounded-lg bg-slate-100 flex items-center justify-center flex-shrink-0">
-                <img src="src/img/ddc1.png" class="w-7 h-7 lg:w-8 lg:h-8 object-contain" alt="DIMT"/>
+                <img src="src/img/logo.png" class="w-7 h-7 lg:w-8 lg:h-8 object-contain" alt="DIMT"/>
             </div>
             <div class="min-w-0">
-                <h1 class="text-slate-900 font-semibold text-lg lg:text-xl tracking-tight leading-none">DDC</h1>
-                <p class="text-[10px] text-slate-400 font-medium tracking-[0.1em] uppercase hidden sm:block truncate">Domasi Development College</p>
+                <h1 class="text-slate-900 font-semibold text-lg lg:text-xl tracking-tight leading-none">DIMT</h1>
+                <p class="text-[10px] text-slate-400 font-medium tracking-[0.1em] uppercase hidden sm:block truncate">Domasi Institute of Management & Technology</p>
             </div>
         </div>
 
@@ -334,53 +334,17 @@ select:valid{
     </main>
 
     <!-- footer -->
-<footer class="border-t border-slate-200/60 bg-white/70 backdrop-blur-xl">
+<footer class="border-t border-slate-200/60 bg-white/80 backdrop-blur-xl">
 
-    <!-- Desktop Footer -->
-    <div class="hidden md:flex items-center justify-between px-8 py-4 text-xs text-slate-500">
+    <div class="max-w-6xl mx-auto px-6 py-5 flex flex-col md:flex-row items-center justify-center gap-3 text-xs text-slate-500">
 
-        <!-- Left: Phone -->
-        <div class="flex items-center gap-4">
-            <span class="flex items-center gap-2 hover:text-slate-700 transition">
-                <i class="bi bi-telephone text-blue-500"></i>
-                0993 266 810
-            </span>
+        <!-- Left -->
+        <p>
+            © 2026 <span class="font-semibold text-slate-700">DIMT</span>. All rights reserved.
+        </p>
 
-            <span class="text-slate-300">|</span>
-
-            <span class="flex items-center gap-2 hover:text-slate-700 transition">
-                <i class="bi bi-telephone text-blue-500"></i>
-                0888 287 816
-            </span>
-        </div>
-
-        <!-- Center: Location + Copyright -->
-        <div class="flex items-center gap-3 text-slate-400">
-            <span class="flex items-center gap-1">
-                <i class="bi bi-geo-alt text-red-400"></i>
-                Zomba, Malawi
-            </span>
-
-            <span class="w-1 h-1 rounded-full bg-slate-300"></span>
-
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-
-            <span>
-                © 2026 <span class="font-semibold text-slate-600">DDC</span>
-                All rights reserved
-            </span>
-        </div>
-
-        <!-- Right: Email -->
-        <div class="flex items-center gap-2 hover:text-slate-700 transition">
-            <i class="bi bi-envelope text-blue-500"></i>
-            dimtacademics@gmail.com
-        </div>
 
     </div>
-
-    <!-- Mobile Bottom Nav -->
-    <nav id="mobile_menu"></nav>
 
 </footer>
 
@@ -417,7 +381,7 @@ function lex() {
                 img.style.opacity = "1";
             };
         }, 800);
-    }, 30000);
+    }, 15000);
 }
   
 
@@ -466,7 +430,7 @@ function nav(opt){
 
     }else{
       view.innerHTML = dashboard;
-      //lex();
+      lex();
     }
 
   }, 500); // loader shows for 0.5 seconds
