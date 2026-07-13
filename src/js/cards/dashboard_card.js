@@ -54,7 +54,7 @@ dashboard = `
     <!-- Hero Card -->
     <div class="bg-white rounded-2xl border border-slate-200/80 shadow-[0_1px_3px_rgba(0,0,0,0.04)] overflow-hidden grid grid-cols-1 md:grid-cols-2 animate-[fadeIn_0.6s_ease-out]">
         <div class="relative bg-slate-100 h-56 md:h-auto overflow-hidden">
-            <img id='land_card' src="src/img/gala18.jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="DIMT Campus"/>
+            <img id='land_card' src="src/img/N/N2.png" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"/>
             <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent md:bg-gradient-to-r md:from-transparent md:via-transparent md:to-white/10"></div>
             <div class="absolute bottom-4 left-4 md:hidden">
                 <div class="inline-flex items-center gap-1.5 bg-white/90 backdrop-blur-sm text-blue-600 text-[10px] font-bold px-2.5 py-1 rounded-full">
@@ -69,16 +69,16 @@ dashboard = `
                 Admissions Open 2025
             </div>
             <h2 class="text-xl sm:text-2xl font-semibold text-slate-900 tracking-tight leading-tight">
-                Welcome to Your Future at DIMT
+                Welcome to Your Future
             </h2>
             <p class="text-slate-500 leading-relaxed mt-3 text-sm">
                 Discover a vibrant learning environment where students are empowered to grow, innovate, and achieve their dreams. We combine quality education, practical experience, and a supportive community to prepare you for success.
             </p>
             <div class="mt-5 flex items-center gap-3">
                 <div class="flex -space-x-2">
-                    <img src="src/img/gala3.jpg" class="w-7 h-7 rounded-full border-2 border-white object-cover" alt=""/>
-                    <img src="src/img/gala4.jpg" class="w-7 h-7 rounded-full border-2 border-white object-cover" alt=""/>
-                    <img src="src/img/gala5.jpg" class="w-7 h-7 rounded-full border-2 border-white object-cover" alt=""/>
+                    <img src="src/img/N/N6.jpg" class="w-7 h-7 rounded-full border-2 border-white object-cover" alt=""/>
+                    <img src="src/img/N/N7.jpg" class="w-7 h-7 rounded-full border-2 border-white object-cover" alt=""/>
+                    <img src="src/img/N/N8.png" class="w-7 h-7 rounded-full border-2 border-white object-cover" alt=""/>
                     <div class="w-7 h-7 rounded-full border-2 border-white bg-blue-50 flex items-center justify-center">
                         <span class="text-[9px] font-bold text-blue-600">+500</span>
                     </div>
@@ -101,7 +101,7 @@ dashboard = `
         
         <!-- Hero Banner -->
         <div class="relative h-48 sm:h-64 overflow-hidden">
-            <img src="src/img/gala0.jpg" class="w-full h-full object-cover" alt="DIMT Campus"/>
+            <img src="src/img/N/N10.png" class="w-full h-full object-cover" alt="Mzuzu Campus"/>
             <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
             <div class="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
                 <div class="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-md text-white text-[11px] font-semibold px-3 py-1 rounded-full mb-3 uppercase tracking-wider border border-white/20">
@@ -109,9 +109,9 @@ dashboard = `
                     About Us
                 </div>
                 <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight leading-tight">
-                    The Domasi Institute of<br class="hidden sm:block"/> Management & Technology
+                    The The Northen Hospitality
                 </h2>
-                <p class="text-white/70 text-sm mt-2 max-w-lg">A TEVETA-accredited college in Zomba shaping the next generation of professionals, innovators, and leaders.</p>
+                <p class="text-white/70 text-sm mt-2 max-w-lg">A TEVETA-accredited college in Mzuzu shaping the next generation of professionals, innovators, and leaders.</p>
             </div>
         </div>
 
@@ -128,7 +128,7 @@ dashboard = `
                         <div class="h-px flex-1 bg-slate-100 ml-2"></div>
                     </h3>
                     <p class="text-slate-500 leading-relaxed mt-2 text-[13px]">
-                        DIMT was founded on a simple belief: that every young person in Malawi deserves access to education that actually leads somewhere. We saw too many graduates with certificates but no skills, and too many employers struggling to find capable staff. So we built a college that bridges that gap with hands-on training, real-world projects, and qualifications that employers actually respect. Today, we're proud to be one of Zomba's fastest growing colleges, and we're just getting started.
+                        The Northen Hospitality was founded on a simple belief: that every young person in Malawi deserves access to education that actually leads somewhere. We saw too many graduates with certificates but no skills, and too many employers struggling to find capable staff. So we built a college that bridges that gap with hands-on training, real-world projects, and qualifications that employers actually respect. Today, we're proud to be one of Mzuzu's fastest growing colleges, and we're just getting started.
                     </p>
                 </div>
             </div>
@@ -206,7 +206,7 @@ dashboard = `
             <!-- Campus Highlights -->
             <div class="mt-8">
                 <h3 class="text-lg font-semibold text-slate-900 tracking-tight flex items-center gap-2">
-                    Life at DIMT
+                    Life at The Northen Hospitality
                     <div class="h-px flex-1 bg-slate-100 ml-2"></div>
                 </h3>
                 <div class="mt-4 grid grid-cols-3 gap-2.5">
@@ -243,10 +243,10 @@ dashboard = `
                 </div>
             </div>
 
-            <!-- Why Choose DIMT -->
+            <!-- Why Choose The Northen Hospitality -->
             <div class="mt-8">
                 <h3 class="text-lg font-semibold text-slate-900 tracking-tight flex items-center gap-2">
-                    Why Choose DIMT?
+                    Why Choose The Northen Hospitality?
                     <div class="h-px flex-1 bg-slate-100 ml-2"></div>
                 </h3>
                 <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -335,7 +335,7 @@ dashboard = `
             <div class="mt-8 p-5 rounded-2xl bg-gradient-to-r from-blue-600 to-blue-700 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 relative overflow-hidden">
                 <div class="absolute top-0 right-0 w-40 h-40 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/3"></div>
                 <div class="relative">
-                    <h4 class="text-white font-semibold text-[15px]">Ready to join the DIMT family?</h4>
+                    <h4 class="text-white font-semibold text-[15px]">Ready to join Us?</h4>
                     <p class="text-blue-100 text-[13px] mt-0.5">Admissions are now open for the next intake.</p>
                 </div>
                 <div class="flex gap-2.5 relative">
@@ -361,7 +361,7 @@ dashboard = `
                 Accredited
             </div>
             <h3 class="text-lg sm:text-xl font-semibold text-slate-900 tracking-tight leading-tight">
-                TEVETA-accredited institution in Zomba, Malawi.
+                TEVETA-accredited institution in Mzuzu, Malawi.
             </h3>
             <p class="text-slate-500 leading-relaxed mt-3 text-[13px]">
                 With a proven track record in delivering high-quality vocational training, we equip students with job-ready skills that meet local market demands and lay the foundation for economic independence.
@@ -370,7 +370,7 @@ dashboard = `
 
         <!-- Middle: Image -->
         <div class="relative bg-slate-100 h-52 md:h-auto overflow-hidden">
-            <img src="src/img/add.jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="DIMT Students"/>
+            <img src="src/img/N/N13.jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Students"/>
         </div>
 
         <!-- Right: Campus Life -->
@@ -379,7 +379,7 @@ dashboard = `
                 Your Future Starts Here
             </h3>
             <p class="text-slate-500 leading-relaxed mt-3 text-[13px]">
-                Life at DIMT is more than education it's a journey of growth, creativity, and opportunity. Join a vibrant student community where dreams are shaped into successful futures.
+                Life at The Northen Hospitality is more than education it's a journey of growth, creativity, and opportunity. Join a vibrant student community where dreams are shaped into successful futures.
             </p>
             
             <div class="flex justify-center gap-4 mt-6">
@@ -410,7 +410,7 @@ dashboard = `
         <!-- Image side -->
         <div class="relative bg-slate-100 h-56 md:h-auto md:col-span-2 overflow-hidden">
 <img 
-  src="src/img/gala11.jpg"
+  src="src/img/N/N8.png"
   class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
   alt="Programs"
 />            <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
@@ -596,7 +596,7 @@ dashboard = `
                     </div>
                     <div>
                         <h4 class="text-[13px] font-semibold text-slate-800">Location</h4>
-                        <p class="text-slate-400 text-[12px] leading-relaxed mt-0.5">Zomba, Domasi ,Works</p>
+                        <p class="text-slate-400 text-[12px] leading-relaxed mt-0.5">Mzuzu Campus, opposite Grand Palace Hotel, next to Multi Career Secondary School</p>
                     </div>
                 </div>
                 <div class="flex items-start gap-3.5">
@@ -614,7 +614,7 @@ dashboard = `
                     </div>
                     <div>
                         <h4 class="text-[13px] font-semibold text-slate-800">Email</h4>
-                        <p class="text-slate-400 text-[12px] leading-relaxed mt-0.5">dimtacademics@gmail.com</p>
+                        <p class="text-slate-400 text-[12px] leading-relaxed mt-0.5">thenorthernhospitality@gmail.com</p>
                     </div>
                 </div>
                 <div class="flex items-start gap-3.5">
@@ -631,10 +631,10 @@ dashboard = `
             <!-- Social Links -->
             <div class="flex items-center gap-2 mt-6 pt-5 border-t border-slate-100">
                 <span class="text-[11px] font-medium text-slate-400 uppercase tracking-wider mr-1">Follow Us</span>
-                <a href="https://web.facebook.com/profile.php?id=100064349132314&locale=pt_PT#" class="w-9 h-9 rounded-lg bg-slate-50 border border-slate-100 hover:bg-blue-50 hover:border-blue-200 flex items-center justify-center transition-all group">
+                <a href="https://web.facebook.com/p/The-Northern-Hospitality-100094440677874/?_rdc=1&_rdr#" class="w-9 h-9 rounded-lg bg-slate-50 border border-slate-100 hover:bg-blue-50 hover:border-blue-200 flex items-center justify-center transition-all group">
                     <i class="bi bi-facebook text-slate-400 group-hover:text-blue-600 text-sm transition-colors"></i>
                 </a>
-                <a href="https://wa.me/265993266810" target="_blank" class="w-9 h-9 rounded-lg bg-slate-50 border border-slate-100 hover:bg-green-50 hover:border-green-200 flex items-center justify-center transition-all group">
+                <a href="https://wa.me/265885234259" target="_blank" class="w-9 h-9 rounded-lg bg-slate-50 border border-slate-100 hover:bg-green-50 hover:border-green-200 flex items-center justify-center transition-all group">
                     <i class="bi bi-whatsapp text-slate-400 group-hover:text-green-600 text-sm transition-colors"></i>
                 </a>
             </div>
@@ -643,7 +643,7 @@ dashboard = `
         <!-- Map / Visual Side -->
         <div class="relative bg-slate-100 h-72 md:h-auto md:col-span-2 flex flex-col overflow-hidden">
             <div class="flex-1 relative">
-                <img src="src/img/gala3.jpg" class="w-full h-full object-cover" alt="DIMT Campus"/>
+                <img src="src/img/N/N1.png" class="w-full h-full object-cover" alt="Campus"/>
                 <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
                 <div class="absolute bottom-4 left-4 right-4">
                     <div class="bg-white/90 backdrop-blur-md rounded-xl p-3.5 border border-white/50 shadow-lg">
@@ -652,14 +652,14 @@ dashboard = `
                                 <i class="bi bi-pin-map-fill text-white text-sm"></i>
                             </div>
                             <div>
-                                <h4 class="text-[12px] font-semibold text-slate-800">DIMT Campus</h4>
-                                <p class="text-[11px] text-slate-500">Zomba, Malawi</p>
+                                <h4 class="text-[12px] font-semibold text-slate-800">Mzuzu Campus</h4>
+                                <p class="text-[11px] text-slate-500">Mzuzu, Malawi</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <a href="https://www.google.com/maps/search/?api=1&query=Domasi+Institute+of+Management+and+Technology" target="_blank" class="flex items-center justify-center gap-2 py-3.5 bg-slate-800 hover:bg-slate-700 text-white text-[12px] font-medium transition-colors cursor-pointer">
+            <a href="https://www.google.com/maps/search/?api=1&query=The Northen+hospitality+mzuzu" target="_blank" class="flex items-center justify-center gap-2 py-3.5 bg-slate-800 hover:bg-slate-700 text-white text-[12px] font-medium transition-colors cursor-pointer">
                 <i class="bi bi-map text-sm"></i>
                 Open in Google Maps
             </a>

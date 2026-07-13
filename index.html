@@ -21,7 +21,7 @@
             }
         }
     </script>
-    <title>DIMT</title>
+    <title>The Northen Hospitality</title>
     <style>
         body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
 
@@ -221,11 +221,11 @@ select:valid{
         <!-- Logo & Name -->
         <div class="flex items-center gap-3 min-w-0">
             <div class="w-9 h-9 lg:w-10 lg:h-10 rounded-lg bg-slate-100 flex items-center justify-center flex-shrink-0">
-                <img src="src/img/DIMT.png" class="w-7 h-7 lg:w-8 lg:h-8 object-contain" alt="DIMT"/>
+                <img src="src/img/N/N.png" class="w-7 h-7 lg:w-8 lg:h-8 object-contain" alt="DIMT"/>
             </div>
             <div class="min-w-0">
-                <h1 class="text-slate-900 font-semibold text-lg lg:text-xl tracking-tight leading-none">DIMT</h1>
-                <p class="text-[10px] text-slate-400 font-medium tracking-[0.1em] uppercase hidden sm:block truncate">Domasi Institute of management & technology</p>
+                <h1 class="text-slate-900 font-semibold text-lg lg:text-xl tracking-tight leading-none">The Northen Hospitality</h1>
+                <p class="text-[10px] text-slate-400 font-medium tracking-[0.1em] uppercase hidden sm:block truncate">Learn skill, Own your future, Build your nation</p>
             </div>
         </div>
 
@@ -343,30 +343,27 @@ select:valid{
         <div class="flex items-center gap-4">
             <span class="flex items-center gap-2 hover:text-slate-700 transition">
                 <i class="bi bi-telephone text-blue-500"></i>
-                0993 266 810
+                0885234259
             </span>
 
             <span class="text-slate-300">|</span>
 
-            <span class="flex items-center gap-2 hover:text-slate-700 transition">
-                <i class="bi bi-telephone text-blue-500"></i>
-                0888 287 816
+            <span class="flex items-center gap-1">
+                <i class="bi bi-geo-alt text-red-400"></i>
+                Mzuzu, Malawi
             </span>
         </div>
 
         <!-- Center: Location + Copyright -->
         <div class="flex items-center gap-3 text-slate-400">
-            <span class="flex items-center gap-1">
-                <i class="bi bi-geo-alt text-red-400"></i>
-                Zomba, Malawi
-            </span>
+            
 
             <span class="w-1 h-1 rounded-full bg-slate-300"></span>
 
             <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
 
             <span>
-                © 2026 <span class="font-semibold text-slate-600">DIMT</span>
+                © 2026 <span class="font-semibold text-slate-600"></span>
                 All rights reserved
             </span>
         </div>
@@ -403,6 +400,8 @@ select:valid{
 <script>
 
 //used to switch images how to add effect e.g zooming effect
+let memory = 0;
+
 function lex() {
     const img = document.getElementById("land_card");
 
@@ -410,13 +409,22 @@ function lex() {
         img.style.opacity = "0";
 
         setTimeout(() => {
-            const which = Math.floor(Math.random() * 5) + 1;
-            img.src = `src/img/gala${which}.jpg`;
+            let which;
+
+            // Keep generating until it's different from the previous one
+            do {
+                which = Math.floor(Math.random() * 5) + 1;
+            } while (which === memory);
+
+            memory = which;
+
+            img.src = `src/img/N/N${which}.png`;
 
             img.onload = () => {
                 img.style.opacity = "1";
             };
         }, 800);
+
     }, 30000);
 }
   
@@ -466,7 +474,7 @@ function nav(opt){
 
     }else{
       view.innerHTML = dashboard;
-      //lex();
+      lex();
     }
 
   }, 500); // loader shows for 0.5 seconds

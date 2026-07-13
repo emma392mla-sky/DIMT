@@ -1504,29 +1504,30 @@ async function view_specific_student_details(uid){
     `; // Modify titles
 
     //set data from 2 tables
-    setTimeout(async () => {
+    setTimeout(() => {
 
     const conf = document.getElementById('pay_config');
 
-    const [
-        { data: examData, error: examError },
-        { data: studentData, error: studentError }
-    ] = await Promise.all([
-        supabaseClient
-            .from('Exam_Registration')
-            .select('exam_name')
-            .eq('student_id', uid),
+    
 
-        supabaseClient
-            .from('registered_students')
-            .select('exam_board')
-            .eq('student_id', uid)
-    ]);
+conf.innerHTML = `
+    <div class="w-[100%] h-[100%] flex flex-col items-center justify-center gap-[10px]">
+        <span class="text-[60px]">📄</span>
 
-    conf.innerHTML = `
-        Name: ${examData?.[0]?.exam_name || 'N/A'}<br>
-        Board: ${studentData?.[0]?.exam_board || 'N/A'}
-    `;
+        <h1 class="text-[30px] font-bold text-red-600">
+            MSCE
+        </h1>
+
+        <h4 class="text-[18px] text-gray-700">
+            Certificate Not Found
+        </h4>
+
+        <p class="w-[300px] text-[14px] text-center text-gray-500">
+            Please check the candidate details and try again.
+        </p>
+    </div>
+`;
+
 
 }, 500);
 
