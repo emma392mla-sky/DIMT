@@ -1152,8 +1152,10 @@ function veri(){
     const examValue2 = data?.[0]?.apply;
         
         
-    if (examValue2 == 'TRUE') {
+    if (examValue2 == true) {
       notice();
+    }else{
+      alert('notice: '+examValue2);
     }
   })
 }
@@ -1198,7 +1200,7 @@ function notice() {
     </div>
 
     <p class="text-sm text-slate-600">
-        Apply now for the 2026 intake. Limited seats available.
+        Apply now for the ${new Date().getFullYear()} intake. Limited seats available.
     </p>
   `;
 
